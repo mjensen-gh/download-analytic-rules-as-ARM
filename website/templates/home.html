@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Client List{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <br>
+        <h1>Analytic Rules</h1>
+        <br>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Rule Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rule_name in rule_names %}
+                <tr>
+                    <td>{{ rule_name }}</td>
+                    <td>
+                        <a href="/download-template?rule_name={{ rule_name }}" class="btn btn-primary">Download Template</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
